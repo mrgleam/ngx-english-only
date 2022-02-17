@@ -101,15 +101,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "ngx-english-only-app:build:production"
-            },
-            "development": {
-              "browserTarget": "ngx-english-only-app:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
+          "options": {
+            "browserTarget": "ngx-english-only-app:build"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

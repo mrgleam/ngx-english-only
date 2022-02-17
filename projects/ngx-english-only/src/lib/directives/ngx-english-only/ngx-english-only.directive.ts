@@ -1,7 +1,7 @@
 import { Directive } from '@angular/core';
 
 @Directive({
-  selector: '[libNgxEnglishOnly]'
+  selector: '[englishOnly]'
 })
 export class NgxEnglishOnlyDirective {
 
