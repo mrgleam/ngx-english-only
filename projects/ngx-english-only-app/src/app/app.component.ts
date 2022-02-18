@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +8,14 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent {
   title = 'ngx-english-only-app';
-  name = new FormControl('', Validators.required);
-  email = new FormControl('', Validators.email)
+  public nestedForm: FormGroup = new FormGroup({
+    basicInfo: new FormControl("")
+  });
+  
   constructor() {
-    this.name.setValue('test');
   }
+
   ngOnInit(): void {
-    this.name.valueChanges.subscribe(v => console.log(v))
+    this.nestedForm.valueChanges.subscribe(v => console.log(v))
   }
 }
